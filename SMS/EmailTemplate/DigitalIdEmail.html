@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<body style='height:auto;min-height:auto;'>
+    <style>
+        .vl {
+            border-left: 6px solid #F4B41A;
+            height: 40px;
+        }
+    </style>
+    <table style="border:0px;border-collapse:collapse;width: 40%;">
+        <tr style="background-color:#F4B41A;">
+            <td style="padding: 15px;"><img src="cid:imgLogo" style="width:50px;height:50px;" target='_blank' /></td>
+            <td colspan="2" style="padding: 15px;color:#143D95;"><h1>{CampusName}</h1></td>
+        </tr>
+        <tr style="background-color:#143D95">
+            <td style="padding: 15px;"><img src="cid:imgStudent" style="width:100px;height:100px;" target='_blank' /></td>
+            <td style="color:#F4B41A;"><div style="border-left: 4px solid #F4B41A;height:40px;"><b style="width:15px;height:50px;">&nbsp;&nbsp;</b>Valid  From<br /><b style="width:15px;height:50px;">&nbsp;&nbsp;</b>{ValidFrom}</div></td>
+            <td style="color:#F4B41A;"><div style="border-left: 4px solid #F4B41A;height:40px;"><b style="width:15px;height:50px;">&nbsp;&nbsp;</b>Expire<br /><b style="width:15px;height:50px;">&nbsp;&nbsp;</b>{ValidTo}</div></td>
+        </tr>
+        <tr style="background-color:#143D95;">
+            <td colspan="3" style="color:#F4B41A;padding: 15px;width:auto;">
+                <div>
+                    {StudentId}
+                    <br />{StudentName}
+                    <br />{DepartmentName}
+                </div>
+                <div style="text-align:right;">
+                    Canteen : {CanteenList}
+                    <br />Block Group : {BGList}
+                    <br />Access Group : {AGList}
+                </div>
+            </td>
+
+        </tr>
+
+        <tr style="background-color:#F4B41A;height:15px;"><td></td><td></td><td></td></tr>
+        <tr style="background-color:#F4B41A;">
+
+            <td colspan="3" style="text-align:center;"><img src="cid:imgBarcode" style="width:150px;height:150px" target='_blank' /></td>
+
+        </tr>
+    </table>
+</body>
+</html>

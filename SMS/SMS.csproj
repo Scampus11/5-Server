@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45291774-3EB2-4358-BAD8-5D0301E81BD1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMS</RootNamespace>
+    <AssemblyName>SMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ASPNET_Captcha">
+      <HintPath>..\..\..\SMS_Saiyed\Captcha_code\Bin\ASPNET_Captcha.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\SMS\SQLServer_Export_Excel\Bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\..\SMS\SQLServer_Export_Excel\Bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\SMS_Saiyed\ExportPDF_Paging\Bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.ConnectionInfoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlClrProvider, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SqlClrProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Neodynamic.WebControls.BarcodeProfessional, Version=13.0.0.0, Culture=neutral, PublicKeyToken=c6b33c3093a0d4cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\Neodynamic.WebControls.BarcodeProfessional.13.0.0\lib\Neodynamic.WebControls.BarcodeProfessional.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.6\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=19.2450.0.60, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.19.2.0.60\lib\net45\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=19.2450.0.60, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.2.0.60\lib\net45\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=19.2450.0.60, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.19.2.0.60\lib\net45\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.7.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Access_Group_Master.aspx" />
+    <Content Include="Access_List.aspx" />
+    <Content Include="AdminssionMaster.aspx" />
+    <Content Include="assets\backend\global\css\components-rounded.min.css" />
+    <Content Include="assets\backend\global\css\plugins.min.css" />
+    <Content Include="assets\backend\global\img\accordion-plusminus.png" />
+    <Content Include="assets\backend\global\img\datatable-row-openclose.png" />
+    <Content Include="assets\backend\global\img\portlet-collapse-icon-white.png" />
+    <Content Include="assets\backend\global\img\portlet-collapse-icon.png" />
+    <Content Include="assets\backend\global\img\portlet-config-icon-white.png" />
+    <Content Include="assets\backend\global\img\portlet-config-icon.png" />
+    <Content Include="assets\backend\global\img\portlet-expand-icon-white.png" />
+    <Content Include="assets\backend\global\img\portlet-expand-icon.png" />
+    <Content Include="assets\backend\global\img\portlet-reload-icon-white.png" />
+    <Content Include="assets\backend\global\img\portlet-reload-icon.png" />
+    <Content Include="assets\backend\global\img\portlet-remove-icon-white.png" />
+    <Content Include="assets\backend\global\img\portlet-remove-icon.png" />
+    <Content Include="assets\backend\global\img\remove-icon-small.png" />
+    <Content Include="assets\backend\global\img\syncfusion-icons-white.png" />
+    <Content Include="assets\backend\global\img\syncfusion-icons.png" />
+    <Content Include="assets\backend\global\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="assets\backend\global\plugins\bootstrap-switch\css\bootstrap-switch.min.css" />
+    <Content Include="assets\backend\global\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\backend\global\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\backend\global\plugins\datatables\images\sort_asc.png" />
+    <Content Include="assets\backend\global\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="assets\backend\global\plugins\datatables\images\sort_both.png" />
+    <Content Include="assets\backend\global\plugins\datatables\images\sort_desc.png" />
+    <Content Include="assets\backend\global\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="assets\backend\global\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="assets\backend\global\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\backend\global\plugins\jquery.blockui.min.js" />
+    <Content Include="assets\backend\global\plugins\jquery.min.js" />
+    <Content Include="assets\backend\global\plugins\js.cookie.min.js" />
+    <Content Include="assets\backend\global\plugins\morris\morris.min.js" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="assets\backend\global\plugins\uniform\css\uniform.default.css" />
+    <Content Include="assets\backend\global\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="assets\backend\global\plugins\uniform\images\bg-input.png" />
+    <Content Include="assets\backend\global\plugins\uniform\images\sprite.png" />
+    <Content Include="assets\backend\global\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="assets\backend\img\lock.jpeg" />
+    <Content Include="assets\backend\img\office.jpg" />
+    <Content Include="assets\backend\pages\css\error.min.css" />
+    <Content Include="assets\backend\pages\css\login-4.min.css" />
+    <Content Include="assets\backend\pages\img\bg-white-lock.png" />
+    <Content Include="assets\backend\pages\media\pages\earth.jpg" />
+    <Content Include="baseimg.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="bin\ASPNET_Captcha.dll" />
+    <Content Include="bin\ClosedXML.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\ExcelDataReader.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.dll" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="bin\Microsoft.SqlServer.ConnectionInfoExtended.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Management.Sdk.Sfc.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="bin\Microsoft.SqlServer.SmoExtended.dll" />
+    <Content Include="bin\Microsoft.SqlServer.SqlClrProvider.dll" />
+    <Content Include="bin\Microsoft.SqlServer.SqlEnum.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\QRCoder.dll" />
+    <Content Include="bin\SMS.dll" />
+    <Content Include="bin\SMS.pdb" />
+    <Content Include="bin\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Block_Groups_Access_Logs.aspx" />
+    <Content Include="Canteen_Assigned_History.aspx" />
+    <Content Include="Canteen_Monitoring.aspx" />
+    <Content Include="Canteen_Monitoring_Count.aspx" />
+    <Content Include="Canteen_Public_Monitor.aspx" />
+    <Content Include="Canteen_Report.aspx" />
+    <Content Include="canvas.png" />
+    <Content Include="Captureimage.aspx" />
+    <Content Include="ChangePWDmsg.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Content\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="Content\simple-line-icons\License.txt" />
+    <Content Include="Content\simple-line-icons\Readme.txt" />
+    <Content Include="Content\simple-line-icons\simple-line-icons.css" />
+    <Content Include="Content\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="ConvertByteTOimage.aspx" />
+    <Content Include="ConvertFolderImageToBase64.aspx" />
+    <Content Include="CSS\ajax.css" />
+    <Content Include="CSS\bootstrap-datepicker3.min.css" />
+    <Content Include="CSS\bootstrap-datetimepicker.min.css" />
+    <Content Include="CSS\bootstrap-multiselect.css" />
+    <Content Include="CSS\bootstrap-switch.min.css" />
+    <Content Include="CSS\bootstrap-timepicker.min.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\clockface.css" />
+    <Content Include="CSS\components-rounded.min.css" />
+    <Content Include="CSS\custom.min.css" />
+    <Content Include="CSS\darkblue.min.css" />
+    <Content Include="CSS\daterangepicker-bs3.css" />
+    <Content Include="CSS\font-awesome.css" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\fullcalendar.min.css" />
+    <Content Include="CSS\Grid.css" />
+    <Content Include="CSS\HTML5Nav.css" />
+    <Content Include="CSS\Icon\a076d05399.js" />
+    <Content Include="CSS\Icon\font-awesome.min.css" />
+    <Content Include="CSS\Icon\icon.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\jqvmap.css" />
+    <Content Include="CSS\layout.min.css" />
+    <Content Include="CSS\Master - Copy.css" />
+    <Content Include="CSS\Master.css" />
+    <Content Include="CSS\morris.css" />
+    <Content Include="CSS\p-loading.min.css" />
+    <Content Include="CSS\plugins.min.css" />
+    <Content Include="CSS\simple-line-icons.css" />
+    <Content Include="CSS\simple-line-icons.min.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\sweetalert.css" />
+    <Content Include="CSS\uniform.default.css" />
+    <Content Include="CSS\web.css" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="dashboard.html" />
+    <Content Include="DegreeTypeMaster.aspx" />
+    <Content Include="department.html" />
+    <Content Include="Door_Group_Master.aspx" />
+    <Content Include="Dynamic_DB.aspx" />
+    <Content Include="EmailTemplate\DigitalIdEmail.html" />
+    <Content Include="EmailTemplate\Email.html" />
+    <Content Include="EmailTemplate\Employee_Email.html" />
+    <Content Include="emp.html" />
+    <Content Include="EmpDepartment.aspx" />
+    <Content Include="EmpFacility.aspx" />
+    <Content Include="Employee_Master.aspx" />
+    <Content Include="FileUpload.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Food\Food.jpg" />
+    <Content Include="GridPaging.aspx" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Images\body-bg.png" />
+    <Content Include="Images\Canteen.jpg" />
+    <Content Include="Images\captureBTN.png" />
+    <Content Include="Images\del.png" />
+    <Content Include="Images\images1.jpg" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\LOGO.jpeg" />
+    <Content Include="Images\session.jpg" />
+    <Content Include="Images\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="Images\student.jpeg" />
+    <Content Include="Images\submitBTN.png" />
+    <Content Include="Images\Visitors.png" />
+    <Content Include="Image_Blob.aspx" />
+    <Content Include="ImportExcel\Campus\img-03.jpg" />
+    <Content Include="ImportExcel\Campus\img-04.jpg" />
+    <Content Include="index.html" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\jquery.webcam.js" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\jquery.webcam.min.js" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\jscam.swf" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\jscam_canvas_only.swf" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\src\jscam.xml" />
+    <Content Include="jscam.swf" />
+    <Content Include="jscam.xml" />
+    <Content Include="jscam_canvas_only.swf" />
+    <Content Include="JS\app.min.js" />
+    <Content Include="JS\bootstrap-datepicker.min.js" />
+    <Content Include="JS\bootstrap-datetimepicker.min.js" />
+    <Content Include="JS\bootstrap-fileinput.js" />
+    <Content Include="JS\bootstrap-hover-dropdown.min.js" />
+    <Content Include="JS\bootstrap-multiselect.js" />
+    <Content Include="JS\bootstrap-switch.min.js" />
+    <Content Include="JS\bootstrap-timepicker.min.js" />
+    <Content Include="JS\bootstrap.min.js" />
+    <Content Include="JS\clockface.js" />
+    <Content Include="JS\components-date-time-pickers.min.js" />
+    <Content Include="JS\dashboard.min.js" />
+    <Content Include="JS\datatable.js" />
+    <Content Include="JS\datatables.bootstrap.js" />
+    <Content Include="JS\datatables.min.js" />
+    <Content Include="JS\daterangepicker.js" />
+    <Content Include="JS\demo.min.js" />
+    <Content Include="JS\excanvas.min.js" />
+    <Content Include="JS\fullcalendar.min.js" />
+    <Content Include="JS\jquery-ui.min.js" />
+    <Content Include="JS\jquery.blockui.min.js" />
+    <Content Include="JS\jquery.counterup.min.js" />
+    <Content Include="JS\jquery.easypiechart.min.js" />
+    <Content Include="JS\jquery.flot.categories.min.js" />
+    <Content Include="JS\jquery.flot.min.js" />
+    <Content Include="JS\jquery.flot.resize.min.js" />
+    <Content Include="JS\jquery.min.js" />
+    <Content Include="JS\jquery.slimscroll.min.js" />
+    <Content Include="JS\jquery.sparkline.min.js" />
+    <Content Include="JS\jquery.uniform.min.js" />
+    <Content Include="JS\jquery.uploadPreview.min.js" />
+    <Content Include="JS\jquery.waypoints.min.js" />
+    <Content Include="JS\js.cookie.min.js" />
+    <Content Include="JS\layout.min.js" />
+    <Content Include="JS\moment.min.js" />
+    <Content Include="JS\morris.min.js" />
+    <Content Include="JS\nicedit.js" />
+    <Content Include="JS\p-loading.min.js" />
+    <Content Include="JS\parsley.min.js" />
+    <Content Include="JS\quick-sidebar.min.js" />
+    <Content Include="JS\raphael-min.js" />
+    <Content Include="JS\sweetalert.min.js" />
+    <Content Include="JS\table-datatables-colreorder.min.js" />
+    <Content Include="JS\table2excel.js" />
+    <Content Include="License\jquery.samask-masker.js" />
+    <Content Include="License\License.aspx" />
+    <Content Include="License\LicenseValidate.aspx" />
+    <Content Include="License\script.sql" />
+    <Content Include="License\Server.txt" />
+    <Content Include="logFile\logFile.txt" />
+    <Content Include="Login.aspx" />
+    <Content Include="material-kit-master\magicscroll-trial\index.html" />
+    <Content Include="material-kit-master\magicscroll-trial\LICENSE.txt" />
+    <Content Include="material-kit-master\magicscroll-trial\magicscroll\magicscroll.css" />
+    <Content Include="material-kit-master\magicscroll-trial\magicscroll\magicscroll.js" />
+    <Content Include="MainDashboard.aspx" />
+    <Content Include="material-kit-master\assets\css\css.css" />
+    <Content Include="material-kit-master\assets\css\font-awesome.min.css" />
+    <Content Include="material-kit-master\assets\css\material-kit.css" />
+    <Content Include="material-kit-master\assets\css\material-kit.min.css" />
+    <Content Include="material-kit-master\assets\demo\demo.css" />
+    <Content Include="material-kit-master\assets\img\apple-icon.png" />
+    <Content Include="material-kit-master\assets\img\bg.jpg" />
+    <Content Include="material-kit-master\assets\img\bg2.jpg" />
+    <Content Include="material-kit-master\assets\img\bg3.jpg" />
+    <Content Include="material-kit-master\assets\img\bg7.jpg" />
+    <Content Include="material-kit-master\assets\img\camera-outline.png" />
+    <Content Include="material-kit-master\assets\img\city-profile.jpg" />
+    <Content Include="material-kit-master\assets\img\city.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\clem-onojegaw.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\clem-onojeghuo.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\cynthia-del-rio.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\mariya-georgieva.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\olu-eletu.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\studio-1.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\studio-2.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\studio-3.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\studio-4.jpg" />
+    <Content Include="material-kit-master\assets\img\examples\studio-5.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\avatar.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\camp.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\card-profile4-square.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\card-profile5-square.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\card-profile6-square.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\christian.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\kendall.jpg" />
+    <Content Include="material-kit-master\assets\img\faces\marc.jpg" />
+    <Content Include="material-kit-master\assets\img\favicon.png" />
+    <Content Include="material-kit-master\assets\img\landing.jpg" />
+    <Content Include="material-kit-master\assets\img\profile.jpg" />
+    <Content Include="material-kit-master\assets\img\profile_city.jpg" />
+    <Content Include="material-kit-master\assets\img\responsive-nav.gif" />
+    <Content Include="material-kit-master\assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="material-kit-master\assets\js\core\jquery.min.js" />
+    <Content Include="material-kit-master\assets\js\core\popper.min.js" />
+    <Content Include="material-kit-master\assets\js\material-kit.js" />
+    <Content Include="material-kit-master\assets\js\material-kit.min.js" />
+    <Content Include="material-kit-master\assets\js\plugins\bootstrap-datetimepicker.js" />
+    <Content Include="material-kit-master\assets\js\plugins\jquery.sharrre.js" />
+    <Content Include="material-kit-master\assets\js\plugins\moment.min.js" />
+    <Content Include="material-kit-master\assets\js\plugins\nouislider.min.js" />
+    <Content Include="material-kit-master\docs\documentation.html" />
+    <Content Include="material-kit-master\examples\landing-page.html" />
+    <Content Include="material-kit-master\examples\login-page.html" />
+    <Content Include="material-kit-master\examples\profile-page.html" />
+    <Content Include="material-kit-master\gulpfile.js" />
+    <Content Include="material-kit-master\index.html" />
+    <Content Include="material-kit-master\template.html" />
+    <Content Include="Officer_Master.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\backend\global\plugins\bootstrap\fonts\bootstrap\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="assets\backend\global\plugins\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="assets\backend\global\plugins\simple-line-icons\fonts\Simple-Line-Iconsd41d.eot" />
+    <Content Include="node_modules\.bin\Admin_Master.Master" />
+    <Content Include="Page_Not_Access.aspx" />
+    <Content Include="PDFWithbarcode.aspx" />
+    <Content Include="ProcterAccessLogs.aspx" />
+    <Content Include="ProcterAccessLogsList.aspx" />
+    <Content Include="Procter_Block_Group.aspx" />
+    <Content Include="ProgramMaster.aspx" />
+    <Content Include="QR_CODE\alignpat.js" />
+    <Content Include="QR_CODE\bitmat.js" />
+    <Content Include="QR_CODE\bmparser.js" />
+    <Content Include="QR_CODE\datablock.js" />
+    <Content Include="QR_CODE\databr.js" />
+    <Content Include="QR_CODE\datamask.js" />
+    <Content Include="QR_CODE\decoder.js" />
+    <Content Include="QR_CODE\detector.js" />
+    <Content Include="QR_CODE\errorlevel.js" />
+    <Content Include="QR_CODE\findpat.js" />
+    <Content Include="QR_CODE\formatinf.js" />
+    <Content Include="QR_CODE\gf256.js" />
+    <Content Include="QR_CODE\gf256poly.js" />
+    <Content Include="QR_CODE\grid.js" />
+    <Content Include="QR_CODE\index.html" />
+    <Content Include="QR_CODE\qrcode.js" />
+    <Content Include="QR_CODE\rsdecoder.js" />
+    <Content Include="QR_CODE\test.html" />
+    <Content Include="QR_CODE\version.js" />
+    <Content Include="S2LoginAPI.aspx" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="JPGEncoder.as" />
+    <Content Include="jscam.as" />
+    <Content Include="Makefile" />
+    <Content Include="BitString.as" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="fonts\Simple-Line-Icons.eot" />
+    <Content Include="fonts\Simple-Line-Icons.ttf" />
+    <Content Include="fonts\Simple-Line-Icons.woff" />
+    <Content Include="fonts\Simple-Line-Icons.woff2" />
+    <Content Include="less\simple-line-icons.less" />
+    <Content Include=".gitignore" />
+    <Content Include=".travis.yml" />
+    <Content Include="CODE_OF_CONDUCT.md" />
+    <Content Include="bower.json" />
+    <Content Include="CONTRIBUTING.md" />
+    <Content Include="History.md" />
+    <Content Include="LICENSE.md" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="SMS_Campus_Master.aspx" />
+    <Content Include="SMS_College_Master.aspx" />
+    <Content Include="SMS_Company_Master.aspx" />
+    <Content Include="SMS_Country_Master.aspx" />
+    <Content Include="SMS_Department_Master.aspx" />
+    <Content Include="SMS_Digital_Form.aspx" />
+    <Content Include="SMS_Email_Configuration.aspx" />
+    <Content Include="SMS_Food_Master.aspx" />
+    <Content Include="SMS_Food_Video_Master.aspx" />
+    <Content Include="Procter_System.aspx" />
+    <Content Include="SMS_Job_Title.aspx" />
+    <Content Include="SMS_Quote_Master.aspx" />
+    <Content Include="SMS_Service_Master.aspx" />
+    <Content Include="SMS_SQL_Connection.aspx" />
+    <Content Include="SMS_SQL_Connection_Dynamic.aspx" />
+    <Content Include="SMS_Upload_label_File.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Student_Card_Assignment.aspx" />
+    <Content Include="Supervisor_Canteen_Monitor.aspx" />
+    <Content Include="Video\movie.mp4" />
+    <Content Include="Video\Youtube.jpg" />
+    <Content Include="VisitorManagement\dymo.connect.framework.js" />
+    <Content Include="VisitorManagement\Layout.js" />
+    <Content Include="VisitorManagement\Photos\photo0.png" />
+    <Content Include="VisitorManagement\Photos\photo2.jpg" />
+    <Content Include="VisitorManagement\PrintButtonDisabled.png" />
+    <Content Include="VisitorManagement\PrintButtonHover.png" />
+    <Content Include="VisitorManagement\PrintButtonNormal.png" />
+    <Content Include="VisitorManagement\PrintButtonPressed.png" />
+    <Content Include="VisitorManagement\VisitorManagement.css" />
+    <Content Include="VisitorManagement\VisitorManagement.html" />
+    <Content Include="VisitorManagement\VisitorManagement.js" />
+    <Content Include="VisitorManagement\VMSCard.xml" />
+    <Content Include="Visitor_Served_History.aspx" />
+    <Content Include="webcamjs\flash\README.txt" />
+    <Content Include="webcamjs\webcam.js" />
+    <Content Include="webcamjs\webcam.min.js" />
+    <Content Include="webcamjs\webcam.swf" />
+    <Content Include="webcam_new.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <Content Include="Year_Master.aspx" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\bower.json" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\Makefile" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\README.md" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\src\BitString.as" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\src\JPGEncoder.as" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\src\jscam.as" />
+    <Content Include="jQuery-webcam-master\jQuery-webcam-master\webcam.jquery.json" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufA5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufB5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufC5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufD5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufJ5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufN5qU.woff2" />
+    <Content Include="material-kit-master\assets\woff\BngMUXZYTXPIvIBgJJSb6ufO5qW54A.woff2" />
+    <Content Include="material-kit-master\assets\woff\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fChc4EsA %281%29.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fBBc4.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu4mxK.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu4WxKOzY.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu5mxKOzY.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu72xKOzY.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu7GxKOzY.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu7mxKOzY.woff2" />
+    <Content Include="material-kit-master\assets\woff\KFOmCnqEu92Fr1Mu7WxKOzY.woff2" />
+    <Content Include="bin\SMS.dll.config" />
+    <Content Include="ImportExcel\CampusCampus.xlsx" />
+    <Content Include="ImportExcel\Campus\Campus - Copy.xlsx" />
+    <Content Include="ImportExcel\Campus\Campus.xlsx" />
+    <Content Include="ImportExcel\Staff\Staff.xlsx" />
+    <Content Include="ImportExcel\Student\Student %281%29.xlsx" />
+    <Content Include="ImportExcel\Student\Student.xlsx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.webcam.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="SelfRegistrationSuccessfully.aspx" />
+    <Content Include="SMS_Change_password.aspx" />
+    <Content Include="SMS_logo.aspx" />
+    <Content Include="SMS_Role_Master.aspx" />
+    <Content Include="SMS_Visitor_Access_Level.aspx" />
+    <Content Include="SMS_Visitor_Reason_Master.aspx" />
+    <Content Include="SMS_Visitor_SelfRegistration.aspx" />
+    <Content Include="SMS_Visitor_Type_Master.aspx" />
+    <Content Include="style_new.css" />
+    <Content Include="Webcam.aspx" />
+    <Content Include="Webcam_Plugin\jquery.webcam.js" />
+    <Content Include="Webcam_Plugin\jscam.swf" />
+    <Content Include="Webcam_Plugin\jscam_canvas_only.swf" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="material-kit-master\.npmignore" />
+    <Content Include="material-kit-master\assets\css\material-kit.css.map" />
+    <Content Include="material-kit-master\assets\js\material-kit.js.map" />
+    <Content Include="material-kit-master\assets\scss\material-kit.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\bootstrap.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_alert.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_badge.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_button-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_buttons.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_card.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_carousel.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_close.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_code.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_dropdown.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_functions.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_grid.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_images.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_input-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_list-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_media.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_mixins.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_modal.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_nav.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_navbar.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_pagination.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_popover.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_print.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_progress.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_reboot.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_root.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_tables.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_tooltip.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_transitions.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_type.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_utilities.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\bootstrap\scss\_variables.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\cards\_card-carousel.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\cards\_card-login.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\cards\_card-plain.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_alert.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_animations.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_breakpoints.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_buttons.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_colored-shadows.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_drawer.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_hover.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_layout.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_navbar-colors.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_navs.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_type.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\mixins\_utilities.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\plugins\_plugin-datetime-picker.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_body.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_bootstrap-material-design.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_brand.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_buttons.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_card.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_carousel.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_code.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_colors-map.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_colors.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_custom-forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_drawer.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_dropdown.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_layout.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_list-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_menu.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_modals.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_nav.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_pagination.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_shadow.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_snackbar.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_spacing.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_state.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_tables.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_tooltip.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\variables\_type.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_alerts.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_badges.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_buttons.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_cards.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_carousel.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_checkboxes.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_core-bootstrap.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_custom-forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_drawer.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_dropdown.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_example-pages.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_footers.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_forms.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_headers.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_images.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_info-areas.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_input-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_layout.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_list-group.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_misc.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_mixins.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_modal.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_nav.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_navbar.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_pagination.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_pills.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_popover.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_progress.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_radios.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_reboot.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_responsive.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_ripples.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_switches.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_tabs.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_togglebutton.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_tooltip.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_type.scss" />
+    <Content Include="material-kit-master\assets\scss\material-kit\_variables.scss" />
+    <Content Include="material-kit-master\bower.json" />
+    <Content Include="material-kit-master\CHANGELOG.md" />
+    <Content Include="material-kit-master\ISSUE_TEMPLATE.md" />
+    <Content Include="material-kit-master\LICENSE.md" />
+    <Content Include="material-kit-master\package.json" />
+    <Content Include="material-kit-master\README.md" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Reader_Master.aspx" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Session_Master.aspx" />
+    <Content Include="SMS_Access_Group_Master.aspx" />
+    <Content Include="SMS_Door_Group_Master.aspx" />
+    <Content Include="SMS_Live_Canteen_Monitoring_Screen.aspx" />
+    <Content Include="SMS_Page_Right.aspx" />
+    <Content Include="SMS_Reader_Master.aspx" />
+    <Content Include="SMS_Role_List.aspx" />
+    <Content Include="SMS_Session_Master.aspx" />
+    <Content Include="SMS_Staff_Access_List.aspx" />
+    <Content Include="SMS_Student_Access_List.aspx" />
+    <Content Include="SMS_Visitor_Card_Master.aspx" />
+    <Content Include="SMS_Visitor_Master.aspx" />
+    <Content Include="Staff_Access_List.aspx" />
+    <Content Include="Staff_Employee_Master.aspx" />
+    <Content Include="Student_Master.aspx" />
+    <Content Include="Visitors_Master.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="yarn.lock" />
+    <Content Include="webcamjs\bower.json" />
+    <Content Include="webcamjs\build.sh" />
+    <Content Include="webcamjs\DOCS.md" />
+    <Content Include="webcamjs\flash\com\adobe\images\BitString.as" />
+    <Content Include="webcamjs\flash\com\adobe\images\JPGEncoder.as" />
+    <Content Include="webcamjs\flash\com\adobe\images\PNGEncoder.as" />
+    <Content Include="webcamjs\flash\mx\utils\Base64Encoder.as" />
+    <Content Include="webcamjs\flash\Webcam.as" />
+    <Content Include="webcamjs\flash\Webcam.fla" />
+    <Content Include="webcamjs\LICENSE" />
+    <Content Include="webcamjs\package.json" />
+    <Content Include="webcamjs\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Access_Group_Master.aspx.cs">
+      <DependentUpon>Access_Group_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Access_Group_Master.aspx.designer.cs">
+      <DependentUpon>Access_Group_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Access_List.aspx.cs">
+      <DependentUpon>Access_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Access_List.aspx.designer.cs">
+      <DependentUpon>Access_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminssionMaster.aspx.cs">
+      <DependentUpon>AdminssionMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminssionMaster.aspx.designer.cs">
+      <DependentUpon>AdminssionMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="node_modules\.bin\Admin_Master.Master.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="node_modules\.bin\Admin_Master.Master.designer.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPNET_Captcha.cs" />
+    <Compile Include="baseimg.aspx.cs">
+      <DependentUpon>baseimg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Block_Groups_Access_Logs.aspx.cs">
+      <DependentUpon>Block_Groups_Access_Logs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Block_Groups_Access_Logs.aspx.designer.cs">
+      <DependentUpon>Block_Groups_Access_Logs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BussinessLayer\BS.cs" />
+    <Compile Include="Canteen_Assigned_History.aspx.cs">
+      <DependentUpon>Canteen_Assigned_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen_Assigned_History.aspx.designer.cs">
+      <DependentUpon>Canteen_Assigned_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen_Monitoring.aspx.cs">
+      <DependentUpon>Canteen_Monitoring.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen_Monitoring.aspx.designer.cs">
+      <DependentUpon>Canteen_Monitoring.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen_Monitoring_Count.aspx.cs">
+      <DependentUpon>Canteen_Monitoring_Count.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen_Monitoring_Count.aspx.designer.cs">
+      <DependentUpon>Canteen_Monitoring_Count.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen_Public_Monitor.aspx.cs">
+      <DependentUpon>Canteen_Public_Monitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen_Public_Monitor.aspx.designer.cs">
+      <DependentUpon>Canteen_Public_Monitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen_Report.aspx.cs">
+      <DependentUpon>Canteen_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canteen_Report.aspx.designer.cs">
+      <DependentUpon>Canteen_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Captureimage.aspx.cs">
+      <DependentUpon>Captureimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePWDmsg.aspx.cs">
+      <DependentUpon>ChangePWDmsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePWDmsg.aspx.designer.cs">
+      <DependentUpon>ChangePWDmsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Class\LogFile.cs" />
+    <Compile Include="Class\S2API.cs" />
+    <Compile Include="CommonClass\Checkpath.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertByteTOimage.aspx.cs">
+      <DependentUpon>ConvertByteTOimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConvertByteTOimage.aspx.designer.cs">
+      <DependentUpon>ConvertByteTOimage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertFolderImageToBase64.aspx.cs">
+      <DependentUpon>ConvertFolderImageToBase64.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConvertFolderImageToBase64.aspx.designer.cs">
+      <DependentUpon>ConvertFolderImageToBase64.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DegreeTypeMaster.aspx.cs">
+      <DependentUpon>DegreeTypeMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DegreeTypeMaster.aspx.designer.cs">
+      <DependentUpon>DegreeTypeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Door_Group_Master.aspx.cs">
+      <DependentUpon>Door_Group_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Door_Group_Master.aspx.designer.cs">
+      <DependentUpon>Door_Group_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic_DB.aspx.cs">
+      <DependentUpon>Dynamic_DB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dynamic_DB.aspx.designer.cs">
+      <DependentUpon>Dynamic_DB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpDepartment.aspx.cs">
+      <DependentUpon>EmpDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpDepartment.aspx.designer.cs">
+      <DependentUpon>EmpDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpFacility.aspx.cs">
+      <DependentUpon>EmpFacility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpFacility.aspx.designer.cs">
+      <DependentUpon>EmpFacility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Master.aspx.cs">
+      <DependentUpon>Employee_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Master.aspx.designer.cs">
+      <DependentUpon>Employee_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FCMResponse.cs" />
+    <Compile Include="FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridPaging.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridPaging.aspx.designer %281%29.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTMLWorker.cs" />
+    <Compile Include="Image_Blob.aspx.cs">
+      <DependentUpon>Image_Blob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Image_Blob.aspx.designer.cs">
+      <DependentUpon>Image_Blob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="License\AdminCustomerMaster.cs" />
+    <Compile Include="License\APIResponse.cs" />
+    <Compile Include="License\BaseModel.cs" />
+    <Compile Include="License\ConvertTo.cs" />
+    <Compile Include="License\EncryptionDecryption.cs" />
+    <Compile Include="License\License.aspx.cs">
+      <DependentUpon>License.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="License\License.aspx.designer.cs">
+      <DependentUpon>License.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="License\LicenseKeyGenerator.cs" />
+    <Compile Include="License\LicenseValidate.aspx.cs">
+      <DependentUpon>LicenseValidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="License\LicenseValidate.aspx.designer.cs">
+      <DependentUpon>LicenseValidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainDashboard.aspx.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.aspx.designer.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Officer_Master.aspx.cs">
+      <DependentUpon>Officer_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Officer_Master.aspx.designer.cs">
+      <DependentUpon>Officer_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page_Not_Access.aspx.cs">
+      <DependentUpon>Page_Not_Access.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page_Not_Access.aspx.designer.cs">
+      <DependentUpon>Page_Not_Access.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDFWithbarcode.aspx.cs">
+      <DependentUpon>PDFWithbarcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDFWithbarcode.aspx.designer.cs">
+      <DependentUpon>PDFWithbarcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcterAccessLogs.aspx.cs">
+      <DependentUpon>ProcterAccessLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcterAccessLogs.aspx.designer.cs">
+      <DependentUpon>ProcterAccessLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcterAccessLogsList.aspx.cs">
+      <DependentUpon>ProcterAccessLogsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcterAccessLogsList.aspx.designer.cs">
+      <DependentUpon>ProcterAccessLogsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procter_Block_Group.aspx.cs">
+      <DependentUpon>Procter_Block_Group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procter_Block_Group.aspx.designer.cs">
+      <DependentUpon>Procter_Block_Group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramMaster.aspx.cs">
+      <DependentUpon>ProgramMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProgramMaster.aspx.designer.cs">
+      <DependentUpon>ProgramMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader_Master.aspx.cs">
+      <DependentUpon>Reader_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reader_Master.aspx.designer.cs">
+      <DependentUpon>Reader_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="S2LoginAPI.aspx.cs">
+      <DependentUpon>S2LoginAPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="S2LoginAPI.aspx.designer.cs">
+      <DependentUpon>S2LoginAPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SelfRegistrationSuccessfully.aspx.cs">
+      <DependentUpon>SelfRegistrationSuccessfully.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelfRegistrationSuccessfully.aspx.designer.cs">
+      <DependentUpon>SelfRegistrationSuccessfully.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Session_Master.aspx.cs">
+      <DependentUpon>Session_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Session_Master.aspx.designer.cs">
+      <DependentUpon>Session_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Access_Group_Master.aspx.cs">
+      <DependentUpon>SMS_Access_Group_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Access_Group_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Access_Group_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Campus_Master.aspx.cs">
+      <DependentUpon>SMS_Campus_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Campus_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Campus_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_College_Master.aspx.cs">
+      <DependentUpon>SMS_College_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_College_Master.aspx.designer.cs">
+      <DependentUpon>SMS_College_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Company_Master.aspx.cs">
+      <DependentUpon>SMS_Company_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Company_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Company_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Country_Master.aspx.cs">
+      <DependentUpon>SMS_Country_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Country_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Country_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Department_Master.aspx.cs">
+      <DependentUpon>SMS_Department_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Department_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Department_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Digital_Form.aspx.cs">
+      <DependentUpon>SMS_Digital_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Digital_Form.aspx.designer.cs">
+      <DependentUpon>SMS_Digital_Form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Door_Group_Master.aspx.cs">
+      <DependentUpon>SMS_Door_Group_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Door_Group_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Door_Group_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Change_password.aspx.cs">
+      <DependentUpon>SMS_Change_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Change_password.aspx.designer.cs">
+      <DependentUpon>SMS_Change_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Email_Configuration.aspx.cs">
+      <DependentUpon>SMS_Email_Configuration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Email_Configuration.aspx.designer.cs">
+      <DependentUpon>SMS_Email_Configuration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Food_Master.aspx.cs">
+      <DependentUpon>SMS_Food_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Food_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Food_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Food_Video_Master.aspx.cs">
+      <DependentUpon>SMS_Food_Video_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Food_Video_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Food_Video_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procter_System.aspx.cs">
+      <DependentUpon>Procter_System.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procter_System.aspx.designer.cs">
+      <DependentUpon>Procter_System.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Job_Title.aspx.cs">
+      <DependentUpon>SMS_Job_Title.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Job_Title.aspx.designer.cs">
+      <DependentUpon>SMS_Job_Title.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Live_Canteen_Monitoring_Screen.aspx.cs">
+      <DependentUpon>SMS_Live_Canteen_Monitoring_Screen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Live_Canteen_Monitoring_Screen.aspx.designer.cs">
+      <DependentUpon>SMS_Live_Canteen_Monitoring_Screen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_logo.aspx.cs">
+      <DependentUpon>SMS_logo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_logo.aspx.designer.cs">
+      <DependentUpon>SMS_logo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Page_Right.aspx.cs">
+      <DependentUpon>SMS_Page_Right.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Page_Right.aspx.designer.cs">
+      <DependentUpon>SMS_Page_Right.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Quote_Master.aspx.cs">
+      <DependentUpon>SMS_Quote_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Quote_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Quote_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Reader_Master.aspx.cs">
+      <DependentUpon>SMS_Reader_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Reader_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Reader_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Role_List.aspx.cs">
+      <DependentUpon>SMS_Role_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Role_List.aspx.designer.cs">
+      <DependentUpon>SMS_Role_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Role_Master.aspx.cs">
+      <DependentUpon>SMS_Role_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Role_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Role_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Service_Master.aspx.cs">
+      <DependentUpon>SMS_Service_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Service_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Service_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Session_Master.aspx.cs">
+      <DependentUpon>SMS_Session_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Session_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Session_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_SQL_Connection.aspx.cs">
+      <DependentUpon>SMS_SQL_Connection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_SQL_Connection.aspx.designer.cs">
+      <DependentUpon>SMS_SQL_Connection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_SQL_Connection_Dynamic.aspx.cs">
+      <DependentUpon>SMS_SQL_Connection_Dynamic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_SQL_Connection_Dynamic.aspx.designer.cs">
+      <DependentUpon>SMS_SQL_Connection_Dynamic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Staff_Access_List.aspx.cs">
+      <DependentUpon>SMS_Staff_Access_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Staff_Access_List.aspx.designer.cs">
+      <DependentUpon>SMS_Staff_Access_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Student_Access_List.aspx.cs">
+      <DependentUpon>SMS_Student_Access_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Student_Access_List.aspx.designer.cs">
+      <DependentUpon>SMS_Student_Access_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Upload_label_File.aspx.cs">
+      <DependentUpon>SMS_Upload_label_File.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Upload_label_File.aspx.designer.cs">
+      <DependentUpon>SMS_Upload_label_File.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_Access_Level.aspx.cs">
+      <DependentUpon>SMS_Visitor_Access_Level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_Access_Level.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_Access_Level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_Card_Master.aspx.cs">
+      <DependentUpon>SMS_Visitor_Card_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_Card_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_Card_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_Master.aspx.cs">
+      <DependentUpon>SMS_Visitor_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_Reason_Master.aspx.cs">
+      <DependentUpon>SMS_Visitor_Reason_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_Reason_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_Reason_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_SelfRegistration.aspx.cs">
+      <DependentUpon>SMS_Visitor_SelfRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_SelfRegistration.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_SelfRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_Visitor_Type_Master.aspx.cs">
+      <DependentUpon>SMS_Visitor_Type_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMS_Visitor_Type_Master.aspx.designer.cs">
+      <DependentUpon>SMS_Visitor_Type_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Staff_Access_List.aspx.cs">
+      <DependentUpon>Staff_Access_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff_Access_List.aspx.designer.cs">
+      <DependentUpon>Staff_Access_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Employee_Master.aspx.cs">
+      <DependentUpon>Staff_Employee_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff_Employee_Master.aspx.designer.cs">
+      <DependentUpon>Staff_Employee_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Card_Assignment.aspx.cs">
+      <DependentUpon>Student_Card_Assignment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Card_Assignment.aspx.designer.cs">
+      <DependentUpon>Student_Card_Assignment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Master.aspx.cs">
+      <DependentUpon>Student_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Master.aspx.designer.cs">
+      <DependentUpon>Student_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supervisor_Canteen_Monitor.aspx.cs">
+      <DependentUpon>Supervisor_Canteen_Monitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supervisor_Canteen_Monitor.aspx.designer.cs">
+      <DependentUpon>Supervisor_Canteen_Monitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitors_Master.aspx.cs">
+      <DependentUpon>Visitors_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitors_Master.aspx.designer.cs">
+      <DependentUpon>Visitors_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor_Served_History.aspx.cs">
+      <DependentUpon>Visitor_Served_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor_Served_History.aspx.designer.cs">
+      <DependentUpon>Visitor_Served_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webcam.aspx.cs">
+      <DependentUpon>Webcam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webcam.aspx.designer.cs">
+      <DependentUpon>Webcam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webcam_new.aspx.cs">
+      <DependentUpon>webcam_new.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webcam_new.aspx.designer.cs">
+      <DependentUpon>webcam_new.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Year_Master.aspx.cs">
+      <DependentUpon>Year_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Year_Master.aspx.designer.cs">
+      <DependentUpon>Year_Master.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\images\logo\" />
+    <Folder Include="Images\ICON\StaffImages\" />
+    <Folder Include="Images\StaffImages\" />
+    <Folder Include="Images\StaffSignatureImages\" />
+    <Folder Include="Images\StudentImages\" />
+    <Folder Include="Images\StudentSignature\" />
+    <Folder Include="Images\VisitorImages\" />
+    <Folder Include="QRImages\" />
+    <Folder Include="StudentImages\" />
+    <Folder Include="Upload\" />
+    <Folder Include="XML\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="scss\simple-line-icons.scss" />
+    <Content Include="VisitorManagement\.DS_Store" />
+    <Content Include="VisitorManagement\Layouts\Layout0.label" />
+    <Content Include="VisitorManagement\Layouts\Layout1.label" />
+    <Content Include="VisitorManagement\Layouts\Layout2.label" />
+    <Content Include="VisitorManagement\Layouts\Layout3.label" />
+    <Content Include="VisitorManagement\Layouts\Layout4.label" />
+    <Content Include="VisitorManagement\Layouts\VMS Card.label" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="JS\gridviewscroll.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1693</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5555/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

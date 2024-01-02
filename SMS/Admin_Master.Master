@@ -1,0 +1,969 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin_Master.master.cs" Inherits="SMS.Admin_Master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="csrf-token" content="ax8ZN3lRSoa15FC1BBhhPnP5xckz7rpEbL25Olx3" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap-datetimepicker.js"></script>
+    <link rel="stylesheet" href="/Content/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="/Content/bootstrap.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="Images/LOGO.jpeg" />
+    <link href="CSS/font-awesome.css" rel="stylesheet" />
+    <link href="CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/simple-line-icons.min.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <%--<link href="CSS/uniform.default.css" rel="stylesheet" />--%>
+    <link href="CSS/bootstrap-switch.min.css" rel="stylesheet" />
+    <%--<link href="CSS/daterangepicker-bs3.css" rel="stylesheet" />--%>
+    <link href="CSS/morris.css" rel="stylesheet" />
+    <link href="CSS/fullcalendar.min.css" rel="stylesheet" />
+    <link href="CSS/jqvmap.css" rel="stylesheet" />
+    <link href="CSS/components-rounded.min.css" rel="stylesheet" />
+    <link href="CSS/plugins.min.css" rel="stylesheet" />
+    <link href="CSS/layout.min.css" rel="stylesheet" />
+    <link href="CSS/darkblue.min.css" rel="stylesheet" />
+    <link href="CSS/custom.min.css" rel="stylesheet" />
+    <link href="CSS/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="CSS/p-loading.min.css" rel="stylesheet" />
+    <link href="CSS/sweetalert.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
+
+    <%--<link href="CSS/daterangepicker-bs3.css" rel="stylesheet" />--%>
+    <%--<link href="CSS/bootstrap-datepicker3.min.css" rel="stylesheet" />--%>
+    <link href="CSS/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <%--<link href="CSS/bootstrap-datetimepicker.min.css" rel="stylesheet" />--%>
+    <link href="CSS/clockface.css" rel="stylesheet" />
+    <link href="CSS/ajax.css" rel="stylesheet" />
+    <link href="CSS/layout.min.css" rel="stylesheet" />
+    <link href="CSS/darkblue.min.css" rel="stylesheet" />
+    <link href="CSS/custom.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="CSS/Icon/icon.css" rel="stylesheet" />
+    <script src="CSS/Icon/a076d05399.js"></script>
+    <link href="CSS/Icon/font-awesome.min.css" rel="stylesheet" />
+    <%--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
+    <style>
+        .circle {
+            width: 100px;
+            height: 70px;
+            background: Lightgrey;
+            -moz-border-radius: 160px;
+            -webkit-border-radius: 160px;
+            border-radius: 160px;
+        }
+
+        .gridview {
+            background-color: #fff;
+            padding: 2px;
+            margin: 2% auto;
+        }
+
+            .gridview a {
+                margin: auto 1%;
+                border-radius: 50%;
+                background-color: #444;
+                padding: 5px 10px 5px 10px;
+                color: #fff;
+                text-decoration: none;
+                -o-box-shadow: 1px 1px 1px #111;
+                -moz-box-shadow: 1px 1px 1px #111;
+                -webkit-box-shadow: 1px 1px 1px #111;
+                box-shadow: 1px 1px 1px #111;
+            }
+
+                .gridview a:hover {
+                    background-color: #1e8d12;
+                    color: #fff;
+                }
+
+            .gridview span {
+                background-color: #ae2676;
+                color: #fff;
+                -o-box-shadow: 1px 1px 1px #111;
+                -moz-box-shadow: 1px 1px 1px #111;
+                -webkit-box-shadow: 1px 1px 1px #111;
+                box-shadow: 1px 1px 1px #111;
+                border-radius: 50%;
+                padding: 5px 10px 5px 10px;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            /*background-color: black;*/
+            z-index: 99;
+            /*opacity: 0.8;*/
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .loading {
+            font-family: Arial;
+            font-size: 10pt;
+            border: 5px solid #67CFF5;
+            width: 200px;
+            height: 100px;
+            display: none;
+            position: fixed;
+            background-color: White;
+            z-index: 999;
+        }
+    </style>
+
+
+</head>
+
+
+<body runat="server" id="body" class="page-sidebar-closed">
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="scriptmanager1" runat="server" EnableScriptGlobalization="true" AsyncPostBackTimeout="1000">
+        </asp:ScriptManager>
+
+        <%--<div class="loading" align="center">
+    Loading. Please wait.<br />
+    <br />
+    <img src="Images/loader.gif" alt="" />
+</div>--%>
+        <div>
+            <div class="page-header navbar navbar-fixed-top">
+
+                <div class="page-header-inner ">
+
+                    <div class="page-logo">
+                        <div class="menu-toggler sidebar-toggler" style="float: left;"></div>
+
+
+                        <asp:Image ID="imglogo" runat="server" Style="height: 40px; width: 160px; padding-top: 5px; margin: 0px" alt="logo" class="logo-default" />
+
+
+                    </div>
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+
+                            <li class="dropdown dropdown-user">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <span class="username username-hide-on-mobile">
+                                        <asp:Image runat="server" ID="imgstaff" CssClass="circle" Height="25px" Width="25px" />
+                                    </span>
+                                    <span class="username username-hide-on-mobile">
+                                        <asp:Label ID="lbluserid" runat="server"></asp:Label>
+                                    </span>
+                                    <span class="username username-hide-on-mobile" style="font-size: 10px">(<asp:Label ID="lblUserName" runat="server"></asp:Label>)
+                                    </span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-default">
+                                    <li>
+                                        <a href="#changePassword" data-toggle="modal" id="txtpassword" runat="server">
+
+                                            <asp:LinkButton ID="lnkchangepwd" runat="server" OnClick="lnkchangepwd_Click" Text="Change Password"><i class="icon-settings"></i>Change Password</asp:LinkButton>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="lnklogout" runat="server" OnClick="lnklogout_Click" Text="Log Out"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="page-container">
+
+                <div class="page-sidebar-wrapper">
+                    <div class="page-sidebar navbar-collapse collapse" runat="server" id="divSider">
+
+                        <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                            <li class="sidebar-toggler-wrapper hide">
+
+                                <div class="sidebar-toggler"></div>
+
+                            </li>
+                            <li class="sidebar-search-wrapper"></li>
+                            <h3>
+                                <br />
+
+                            </h3>
+
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa">&#xf0e4;</i>
+                                    <span class="title">Dashboard</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liMainDashboard">
+                                        <a href="MainDashboard.aspx" class="nav-link ">
+                                            <i class="fa fa-dashboard"></i>
+                                            <asp:Label ID="lblMainDashboard" runat="server" Text="MainDashboard.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Dashboard</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item                                                             ">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-user"></i>
+                                    <span class="title">Master</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liStudent" visible="false">
+                                        <a href="Student_Master.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf501;</i>
+                                            <asp:Label ID="lblStudent_Master" runat="server" Text="Student_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Student</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liOfficer" visible="false">
+                                        <a href="Staff_Employee_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf508;</i>
+                                            <asp:Label ID="lblStaff_Employee_Master" runat="server" Text="Staff_Employee_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Staff</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liCampus" visible="false">
+                                        <a href="SMS_Campus_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf549;</i>
+                                            <asp:Label ID="lblSMS_Campus_Master" runat="server" Text="SMS_Campus_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Campus</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liCollege" visible="false">
+                                        <a href="SMS_College_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="fa">&#xf19c;</i>
+                                            <asp:Label ID="lblSMS_College_Master" runat="server" Text="SMS_College_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">College</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liDepartment" visible="false">
+                                        <a href="SMS_Department_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe32a;</i>
+                                            <asp:Label ID="lblSMS_Department_Master" runat="server" Text="SMS_Department_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Department</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liYear" visible="false">
+                                        <a href="Year_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf073;</i>
+                                            <asp:Label ID="lblYear_Master" runat="server" Text="Year_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Year</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="lijobtitle" visible="false">
+                                        <a href="SMS_Job_Title.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf807;</i>
+                                            <asp:Label ID="lblSMS_Job_Title" runat="server" Text="SMS_Job_Title.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Job Title</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liCompany" visible="false">
+                                        <a href="SMS_Company_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="fa">&#xf275;</i>
+                                            <asp:Label ID="lblSMS_Company_Master" runat="server" Text="SMS_Company_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Company</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liCountry" visible="false">
+                                        <a href="SMS_Country_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf0ac;</i>
+                                            <asp:Label ID="lblSMS_Country_Master" runat="server" Text="SMS_Country_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Country</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liProgramMaster" visible="false">
+                                        <a href="ProgramMaster.aspx" class="nav-link nav-toggle">
+                                            <i class="fa">&#xf288;</i>
+                                            <asp:Label ID="lblProgramMaster" runat="server" Text="ProgramMaster.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Program</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liDegreeType" visible="false">
+                                        <a href="DegreeTypeMaster.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe418;</i>
+                                            <asp:Label ID="lblDegreeTypeMaster" runat="server" Text="DegreeTypeMaster.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Degree Type</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liAdminssion" visible="false">
+                                        <a href="AdminssionMaster.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf4fc;</i>
+                                            <asp:Label ID="lblAdminssionMaster" runat="server" Text="AdminssionMaster.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Admission Type Master</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liEmpDepartment" visible="false">
+                                        <a href="EmpDepartment.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe32a;</i>
+                                            <asp:Label ID="lblEmpDepartment" runat="server" Text="EmpDepartment.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Staff Department</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liEmpFacility" visible="false">
+                                        <a href="EmpFacility.aspx" class="nav-link nav-toggle">
+                                            <span class="glyphicon">&#xe247;</span>
+                                            <asp:Label ID="lblEmpFacility" runat="server" Text="EmpFacility.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Staff Facility</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-lock"></i>
+                                    <span class="title">Access Control</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liStudentAccess" visible="false">
+                                        <a href="SMS_Student_Access_List.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf502;</i>
+                                            <asp:Label ID="lblSMS_Student_Access_List" runat="server" Text="SMS_Student_Access_List.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Student Access</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liStaffAccess" visible="false">
+                                        <a href="SMS_Staff_Access_List.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf4ff;</i>
+                                            <asp:Label ID="lblSMS_Staff_Access_List" runat="server" Text="SMS_Staff_Access_List.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Staff Access</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liReader" visible="false">
+                                        <a href="SMS_Reader_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe62b;</i>
+                                            <asp:Label ID="lblSMS_Reader_Master" runat="server" Text="SMS_Reader_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Readers</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liDoorGroup" visible="false">
+                                        <a href="SMS_Door_Group_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf52b;</i>
+                                            <asp:Label ID="lblSMS_Door_Group_Master" runat="server" Text="SMS_Door_Group_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Door Groups</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liAccessGroup" visible="false">
+                                        <a href="SMS_Access_Group_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe886;</i>
+                                            <asp:Label ID="lblSMS_Access_Group_Master" runat="server" Text="SMS_Access_Group_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Access Groups</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liSession" visible="false">
+                                        <a href="SMS_Session_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe8b5;</i>
+                                            <asp:Label ID="lblSMS_Session_Master" runat="server" Text="SMS_Session_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Sessions</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-address-card"></i>
+                                    <span class="title">Visitor Module</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liVisitor" visible="false">
+                                        <a href="SMS_Visitor_Master.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf554;</i>
+                                            <asp:Label ID="lblSMS_Visitor_Master" runat="server" Text="SMS_Visitor_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visitors</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="li1">
+                                        <a href="SMS_Visitor_SelfRegistration.aspx" class="nav-link nav-toggle">
+                                            <i class="material-icons">&#xe312;</i>
+                                            <asp:Label ID="lblSMS_Visitor_SelfRegistration" runat="server" Text="SMS_Visitor_SelfRegistration.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visitor Self Registration</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liVisitorCard" visible="false">
+                                        <a href="SMS_Visitor_Card_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf2bb;</i>
+                                            <asp:Label ID="lblSMS_Visitor_Card_Master" runat="server" Text="SMS_Visitor_Card_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visitor Cards</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liVisitorType" visible="false">
+                                        <a href="SMS_Visitor_Type_Master.aspx" class="nav-link nav-toggle">
+                                            <i class="fa">&#xf226;</i>
+                                            <asp:Label ID="lblSMS_Visitor_Type_Master" runat="server" Text="SMS_Visitor_Type_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visitor Types</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liVisitorReason" visible="false">
+                                        <a href="SMS_Visitor_Reason_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='fas'>&#xf128;</i>
+                                            <asp:Label ID="lblSMS_Visitor_Reason_Master" runat="server" Text="SMS_Visitor_Reason_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visit Reasons</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liVisitorAccessLevel" visible="false">
+                                        <a href="SMS_Visitor_Access_Level.aspx" class="nav-link nav-toggle">
+                                            <i class="fa">&#xf221;</i>
+                                            <asp:Label ID="lblSMS_Visitor_Access_Level" runat="server" Text="SMS_Visitor_Access_Level.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Visitor Access levels</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liService" visible="false">
+                                        <a href="SMS_Service_Master.aspx" class="nav-link nav-toggle">
+                                            <i class='far'>&#xf2dc;</i>
+                                            <asp:Label ID="lblSMS_Service_Master" runat="server" Text="SMS_Service_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Services</span>
+                                            <span class="selected"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-item                                                             ">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="material-icons">&#xe561;</i>
+                                    <span class="title">Canteen Module</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liCanteen" visible="false">
+                                        <a href="SMS_Live_Canteen_Monitoring_Screen.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf2e7;</i>
+                                            <asp:Label ID="lblSMS_Live_Canteen_Monitoring_Screen" runat="server" Text="SMS_Live_Canteen_Monitoring_Screen.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Live Canteen Monitoring Screen</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liSuperVisor" visible="false">
+                                        <a href="Supervisor_Canteen_Monitor.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf505;</i>
+                                            <asp:Label ID="lblSupervisor_Canteen_Monitor" runat="server" Text="Supervisor_Canteen_Monitor.aspx" Visible="false"></asp:Label>
+                                            <span class="title">SuperVisor Canteen Monitor</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liPublic1" visible="false">
+                                        <div id="liPublic" runat="server"></div>
+                                        <a href="Canteen_Public_Monitor.aspx" class="nav-link ">
+                                            <i class="material-icons">&#xe80b;</i>
+                                            <asp:Label ID="lblCanteen_Public_Monitor" runat="server" Text="Canteen_Public_Monitor.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Canteen Public Monitor</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liCanteen_Report" visible="false">
+                                        <a href="Canteen_Report.aspx" class="nav-link ">
+                                            <i class="fa">&#xf201;</i>
+                                            <asp:Label ID="lblCanteen_Report" runat="server" Text="Canteen_Report.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Canteen Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liFood" visible="false">
+                                        <a href="SMS_Food_Master.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf805;</i>
+                                            <asp:Label ID="lblSMS_Food_Master" runat="server" Text="SMS_Food_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Foods</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liVideo" visible="false">
+                                        <a href="SMS_Food_Video_Master.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf03d;</i>
+                                            <asp:Label ID="lblSMS_Food_Video_Master" runat="server" Text="SMS_Food_Video_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Videos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liQuote" visible="false">
+                                        <a href="SMS_Quote_Master.aspx" class="nav-link ">
+                                            <i class='fab'>&#xf2c4;</i>
+                                            <asp:Label ID="lblSMS_Quote_Master" runat="server" Text="SMS_Quote_Master.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Quotes</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa">&#xf080;</i>
+                                    <span class="title">Report</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liCanteen_Assigned_History" visible="false">
+                                        <a href="Canteen_Assigned_History.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf2e7;</i>
+                                            <asp:Label ID="lblCanteen_Assigned_History" runat="server" Text="Canteen_Assigned_History.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Student Canteen Assignment</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liStudent_Card_Assignment" visible="false">
+                                        <a href="Student_Card_Assignment.aspx" class="nav-link ">
+                                            <i class='far'>&#xf2c2;</i>
+                                            <asp:Label ID="lblStudent_Card_Assignment" runat="server" Text="Student_Card_Assignment.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Student Card Assignment</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liVisitor_Served_History" visible="false">
+                                        <a href="Visitor_Served_History.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf4fc;</i>
+                                            <asp:Label ID="lblVisitor_Served_History" runat="server" Text="Visitor_Served_History.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Employee Served Visitors</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liBlock_Groups_Access_Logs" visible="false">
+                                        <a href="Block_Groups_Access_Logs.aspx" class="nav-link ">
+                                            <i class='far'>&#xf1ad;</i>
+                                            <asp:Label ID="lblBlock_Groups_Access_Logs" runat="server" Text="Block_Groups_Access_Logs.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Block Groups Access Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" runat="server" id="liproctordisable">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fas fa-city"></i>
+                                    <span class="title">Procter</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liHostel" visible="false">
+                                        <a href="Procter_System.aspx?HostelGrid=Grid" class="nav-link ">
+                                            <i class="fas fa-city"></i>
+                                            <asp:Label ID="lblHostel" runat="server" Text="Procter_System.aspx?HostelGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Hostels</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item" runat="server" id="liBlock" visible="false">
+                                        <a href="Procter_System.aspx?BlockGrid=Grid" class="nav-link ">
+                                            <i class="fa fa-building"></i>
+                                            <asp:Label ID="lblBlock" runat="server" Text="Procter_System.aspx?BlockGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Blocks</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liFloor" visible="false">
+                                        <a href="Procter_System.aspx?FloorGrid=Grid" class="nav-link ">
+                                            <i class='far'>&#xf07b;</i>
+                                            <asp:Label ID="lblFloor" runat="server" Text="Procter_System.aspx?FloorGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Floors</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liRoom" visible="false">
+                                        <a href="Procter_System.aspx?RoomGrid=Grid" class="nav-link ">
+                                            <i class='fas'>&#xf965;</i>
+                                            <asp:Label ID="lblRoom" runat="server" Text="Procter_System.aspx?RoomGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Rooms</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liBed" visible="false">
+                                        <a href="Procter_System.aspx?BedGrid=Grid" class="nav-link ">
+                                            <i class="fa">&#xf236;</i>
+                                            <asp:Label ID="lblBed" runat="server" Text="Procter_System.aspx?BedGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Beds</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liLocker" visible="false">
+                                        <a href="Procter_System.aspx?LockerGrid=Grid" class="nav-link ">
+                                            <i class="fa fa-lock"></i>
+                                            <asp:Label ID="lblLocker" runat="server" Text="Procter_System.aspx?LockerGrid=Grid" Visible="false"></asp:Label>
+                                            <span class="title">Lockers</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liProcter_Block_Group" visible="false">
+                                        <a href="Procter_Block_Group.aspx" class="nav-link ">
+                                            <i class="fa fa-building"></i>
+                                            <asp:Label ID="lblProcter_Block_Group" runat="server" Text="Procter_Block_Group.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Block Groups</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liProcterAccessLogs" visible="false">
+                                        <a href="ProcterAccessLogs.aspx" class="nav-link ">
+                                            <i class="fa fa-building"></i>
+                                            <asp:Label ID="lblProcterAccessLogs" runat="server" Text="ProcterAccessLogs.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Procter Access Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-building-o"></i>
+                                    <span class="title">Page  access Rights</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="liRoleMaster" visible="false">
+                                        <a href="SMS_Role_Master.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf502;</i>
+                                            <span class="title">Staff Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liRole" visible="false">
+                                        <a href="SMS_Role_List.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf4ff;</i>
+                                            <span class="title">Staff Mapping</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="lipage_Right" visible="false">
+                                        <a href="SMS_Page_Right.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf4fc;</i>
+                                            <span class="title">Staff Page Rights</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="heading" style="display: none">
+                                <h3 class="uppercase">Import</h3>
+                            </li>
+                            <div style="display: none">
+                                <li class="nav-item start active1" runat="server" id="liFileUpload" visible="false">
+                                    <a href="FileUpload.aspx" class="nav-link nav-toggle">
+                                        <asp:Label ID="lblFileUpload" runat="server" Text="FileUpload.aspx" Visible="false"></asp:Label>
+                                        <i class='fas'>&#xf56f;</i>
+                                        <span class="title">Import To excel</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item start active1" runat="server" id="liimage_Blob" visible="false">
+                                    <a href="image_Blob.aspx" class="nav-link nav-toggle">
+                                        <asp:Label ID="lblimage_Blob" runat="server" Text="image_Blob.aspx" Visible="false"></asp:Label>
+                                        <i class='fas'>&#xf56f;</i>
+                                        <span class="title">Image import to Database</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                            </div>
+                            <li class="nav-item                                                             ">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <i class="fa fa-cog"></i>
+                                    <span class="title">Settings</span>
+                                    <span class="arrow"></span>
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item" runat="server" id="lilogo" visible="false">
+                                        <a href="SMS_logo.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf129;</i>
+                                            <asp:Label ID="lblSMS_logo" runat="server" Text="SMS_logo.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Company Info</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liDynamicDB" visible="false">
+                                        <a href="SMS_SQL_Connection_Dynamic.aspx" class="nav-link ">
+                                            <i class="fa">&#xf1c0;</i>
+                                            <asp:Label ID="lblSMS_SQL_Connection_Dynamic" runat="server" Text="SMS_SQL_Connection_Dynamic.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Database Configuration</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liSMS_Email_Configuration" visible="false">
+                                        <a href="SMS_Email_Configuration.aspx" class="nav-link ">
+                                            <i class="material-icons">&#xe0d0;</i>
+                                            <asp:Label ID="lblSMS_Email_Configuration" runat="server" Text="SMS_Email_Configuration.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Email Configuration</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liSMS_Upload_label_File" visible="false">
+                                        <a href="SMS_Upload_label_File.aspx" class="nav-link ">
+                                            <i class='fas'>&#xf2c1;</i>
+                                            <asp:Label ID="lblSMS_Upload_label_File" runat="server" Text="SMS_Upload_label_File.aspx" Visible="false"></asp:Label>
+                                            <span class="title">Upload Badge Files</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" runat="server" id="liS2LoginAPI" visible="false" style="display:none;">
+                                        <asp:LinkButton ID="lnkpopupApi" runat="server" OnClick="lnkpopupApi_Click" class="nav-link ">
+                                            <i class='fas'>&#xf2c1;</i>
+                                            <asp:Label ID="lblS2LoginAPI" runat="server" Text="S2 Login API" Visible="false"></asp:Label>
+                                            <span class="title">S2 API credentials</span>
+                                        </asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div style="display:none;">
+                    <asp:UpdateProgress ID="upprogess" runat="server">
+                        <ProgressTemplate>
+                            <div style="left: 50%; bottom: 50%; position: absolute;">
+                                <img id="loader1_imgwaiticon" src="../images/loader.gif" alt="" class="imgstl">
+                                <asp:Label runat="server" ID="lblupdatetext" Text="loading please wait....."></asp:Label>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
+                    <asp:LinkButton ID="LinkButton1" ForeColor="#ffffff" runat="server"></asp:LinkButton>
+                    <cc1:ModalPopupExtender ID="ModalPopupExtenderAPIs" BehaviorID="mpe" runat="server"
+                        PopupControlID="Panel1" TargetControlID="LinkButton1" BackgroundCssClass="modalBackground" CancelControlID="Button1">
+                    </cc1:ModalPopupExtender>
+                    <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" Style="display: none; left: 84.5px!important; background: #F7F7F7 url('../Images/body-bg.png') repeat scroll 0% 0%;">
+                        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server" ChildrenAsTriggers="true">
+                            <ContentTemplate>
+                                <div class="modal-content" id="div2" runat="server" style="background-color: #fff; display:none;" >
+                                    <div class="modal-body" style="width: 500px!important; position: relative; background-color: #2b3643;">
+                                        <div class="portlet-body form">
+                                            <div class="form-body">
+                                                <div runat="server" id="divAdvanceSearch">
+                                                    <asp:Label ID="lblmsgsuccessgreen" runat="server" Visible="false" Text="S2 session is active." Style="color: green;"></asp:Label>
+                                                    <asp:Label ID="lblmsgsuccessred" runat="server" Visible="false" Text="S2 session is not Active." Style="color: red;"></asp:Label>
+                                                    <h2 style="color: white;">S2 API credentials</h2>
+                                                    <div class="row">
+                                                        <div class='col-sm-12 pull-left'>
+                                                            <div class="form-group">
+                                                                <span style="color: white;">IP Address : </span>
+                                                                <div class="input-icon">
+                                                                    <i class="fa fa-address-card"></i>
+                                                                    <asp:TextBox ID="txtipaddress" runat="server" placeHolder="Enter IP Address Like : 125.123.234.56" autocomplete="off" CssClass="form-control placeholder-no-fix"></asp:TextBox>
+                                                                </div>
+                                                                <asp:Label ID="lblipaddressvdn" runat="server" Style="color: red;" Text="* Select Ip Address..." Visible="false"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class='col-sm-12'>
+                                                            <div class="form-group">
+                                                                <span style="color: white;">User Name : </span>
+                                                                <div class="input-icon">
+                                                                    <i class="fa fa-user"></i>
+                                                                    <asp:TextBox ID="txtusername" runat="server" placeHolder="Enter User Name" autocomplete="off" CssClass="form-control placeholder-no-fix"></asp:TextBox>
+                                                                </div>
+                                                                <asp:Label ID="lblusernamevdn" runat="server" Style="color: red;" Text="* Select Username..." Visible="false"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class='col-sm-12'>
+                                                            <div class="form-group">
+                                                                <span style="color: white;">Password : </span>
+                                                                <div class="input-icon">
+                                                                    <i class="fa fa-lock"></i>
+                                                                    <asp:TextBox ID="txtapipassword" runat="server" placeHolder="Enter Password" TextMode="Password" autocomplete="off" CssClass="form-control placeholder-no-fix"></asp:TextBox>
+                                                                </div>
+                                                                <asp:Label ID="lblpasswordvdn" runat="server" Style="color: red;" Text="* Select password" Visible="false"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <br />
+
+                                                    <div class="row">
+                                                        <div class='col-sm-7  pull-left'>
+                                                            <asp:Label ID="lblAPISuccess" runat="server" Visible="false" Style="color: orangered; font-size: larger;"></asp:Label>
+                                                        </div>
+                                                        <div class='col-sm-5  pull-right' style="margin-right: -39px;">
+                                                            <asp:LinkButton ID="lnklogin" runat="server" Text="Login" class="btn green-meadow" OnClick="lnklogin_Click" />
+                                                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Close" OnClick="Button1_Click" />
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="lnklogin" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                    </asp:Panel>
+                </div>
+                <%--</ContentTemplate>
+            </asp:UpdatePanel>--%>
+                <div id="myModal" runat="server" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content" style="top: 100px; left: 320px; width: 700px; height: 200px;">
+                        <br />
+                        <br />
+                        <div style="text-align: center;">
+                            <h5><b style="color: green">you have not access to this page. pls login here</b></h5>
+                        </div>
+                        <br />
+                        <div style="text-align: center;">
+                            <asp:LinkButton ID="lnkGo" runat="server" Text="Login again" OnClick="lnkGo_Click" class="btn green-meadow" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <br />
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            <span id="year"></span>&copy; ALL RIGHTS RESERVED
+        </div>
+        <div class="scroll-to-top">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+    </div>
+
+</body>
+
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="assets/backend/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+
+<script src="assets/backend/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="assets/backend/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<%--<script src="assets/backend/global/plugins/morris/morris.min.js" type="text/javascript"></script>--%>
+<%--<script src="assets/backend/global/plugins/morris/morris.min.js"></script>--%>
+<script src="assets/backend/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="assets/backend/js/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<%--<script src="assets/backend/js/dashboard.min.js" type="text/javascript"></script>--%>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="assets/backend/js/layout.min.js" type="text/javascript"></script>
+<script src="assets/backend/js/demo.min.js" type="text/javascript"></script>
+<script src="assets/backend/js/quick-sidebar.min.js" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+<!--custom script register-->
+<script src="assets/backend/custom/js/p-loading.min.js"></script>
+<script src="assets/backend/custom/js/jquery.uploadPreview.min.js"></script>
+<script src="assets/backend/custom/js/bootstrap-multiselect.js"></script>
+<script src="assets/backend/custom/js/sweetalert.min.js"></script>
+<script src="assets/backend/custom/js/parsley.min.js"></script>
+<!--data table export script-->
+<script type="text/javascript" src="assets/backend/nicEdit.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bkLib.onDomLoaded(function () { nicEditors.allTextAreas() });
+    });
+</script>
+
+<%--<script>
+    $(document).ready(function () {
+        new Morris.Bar({
+            element: 'myfirstchart',
+            data: [{ year: '2011', value: 25 }, { year: '2012', value: 55 }, { year: '2013', value: 40 }, { year: '2014', value: 65 }, { year: '2015', value: 60 }, { year: '2016', value: 72 }, { year: '2017', value: 45 }, { year: '2018', value: 10 }],
+            xkey: 'year',
+            ykeys: ['value'],
+            // chart.
+            labels: ['Value']
+        });
+    });
+</script>--%>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+<script>
+    var max = 1;
+    $(document).ready(function () {
+        $("#btnAddDescription").on('click', function () {
+            appendPlanDescField($("#planDescriptionContainer"));
+        });
+
+        $(document).on('click', '.Delete_desc', function () {
+            $(this).closest('.input-group').remove();
+        });
+    });
+
+    function appendPlanDescField(container) {
+        max++;
+        container.append(
+            '<div class="input-group">' +
+            '<input name="description' + max + '" value="" class="form-control margin-top-10" type="text" required placeholder="Designation">\n' +
+            '<span class="input-group-btn">' +
+            '<button class="btn btn-danger margin-top-10 Delete_desc" type="button"><i class="fa fa-times"></i></button>' +
+            '</span>' +
+            '</div>'
+
+        );
+    }
+</script>
+</html>
